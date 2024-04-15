@@ -12,20 +12,20 @@ heap_t *max(heap_t *tree);
  */
 int heap_extract(heap_t **root)
 {
-	int value;
+	int val;
 
 	if (!*root)
 		return (0);
-	value = (*root)->n;
+	val = (*root)->n;
 	if (!(*root)->left)
 	{
-		value = (*root)->n;
+		val = (*root)->n;
 		free(*root);
 		*root = NULL;
-		return (value);
+		return (val);
 	}
 	recurse_extract(*root);
-	return (value);
+	return (val);
 }
 
 /**

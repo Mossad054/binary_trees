@@ -32,17 +32,17 @@ avl_t *aux_sort(avl_t *parent, int *array, int begin, int last)
 {
 	avl_t *root;
 	binary_tree_t *aux;
-	int mid = 0;
+	int midd = 0;
 
 	if (begin <= last)
 	{
-		mid = (begin + last) / 2;
-		aux = binary_tree_node((binary_tree_t *)parent, array[mid]);
+		midd = (begin + last) / 2;
+		aux = binary_tree_node((binary_tree_t *)parent, array[midd]);
 		if (aux == NULL)
 			return (NULL);
 		root = (avl_t *)aux;
-		root->left = aux_sort(root, array, begin, mid - 1);
-		root->right = aux_sort(root, array, mid + 1, last);
+		root->left = aux_sort(root, array, begin, midd - 1);
+		root->right = aux_sort(root, array, midd + 1, last);
 		return (root);
 	}
 	return (NULL);

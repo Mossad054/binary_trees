@@ -11,21 +11,21 @@
 avl_t *array_to_avl(int *array, size_t size)
 {
 	avl_t *tree = NULL;
-	size_t index, jndex;
+	size_t indx, jndex;
 
 	if (array == NULL)
 		return (NULL);
 
-	for (index = 0; index < size; index++)
+	for (indx = 0; indx < size; indx++)
 	{
-		for (jndex = 0; jndex < index; jndex++)
+		for (jndex = 0; jndex < indx; jndex++)
 		{
-			if (array[jndex] == array[index])
+			if (array[jndex] == array[indx])
 				break;
 		}
-		if (jndex == index)
+		if (jndex == indx)
 		{
-			if (avl_insert(&tree, array[index]) == NULL)
+			if (avl_insert(&tree, array[indx]) == NULL)
 				return (NULL);
 		}
 	}

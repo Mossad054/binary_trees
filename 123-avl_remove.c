@@ -139,7 +139,7 @@ int successor(bst_t *node)
  */
 void bal(avl_t **tree)
 {
-	int bval;
+	int b_val;
 
 	if (tree == NULL || *tree == NULL)
 		return;
@@ -147,9 +147,9 @@ void bal(avl_t **tree)
 		return;
 	bal(&(*tree)->left);
 	bal(&(*tree)->right);
-	bval = binary_tree_balance((const binary_tree_t *)*tree);
-	if (bval > 1)
+	b_val = binary_tree_balance((const binary_tree_t *)*tree);
+	if (b_val > 1)
 		*tree = binary_tree_rotate_right((binary_tree_t *)*tree);
-	else if (bval < -1)
+	else if (b_val < -1)
 		*tree = binary_tree_rotate_left((binary_tree_t *)*tree);
 }
